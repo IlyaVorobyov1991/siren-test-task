@@ -10,8 +10,7 @@ class FormConfirmPhoneNumberPage(BasePage):
         self.submit_correct_button = "//*[text()='Phone number is correct']"
 
     def click_submit_correct_button(self):
-        submit_correct_button = self.driver.find_element(By.XPATH, self.submit_correct_button)
-        submit_correct_button.click()
+        self.click_to_element(self.submit_correct_button)
 
 
 

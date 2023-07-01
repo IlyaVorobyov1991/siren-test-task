@@ -16,5 +16,4 @@ class FormHomeownerPage(BasePage):
         assert len(icons) == count_icons, f"Expected {count_icons} elements, but found {len(icons)}"
 
     def click_icon(self):
-        yes_icons = self.driver.find_element(By.XPATH, self.yes_icons)
-        yes_icons.click()
+        self.click_to_element(self.yes_icons)

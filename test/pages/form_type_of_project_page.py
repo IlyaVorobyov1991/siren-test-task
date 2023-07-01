@@ -19,20 +19,16 @@ class FormTypeOfProjectPage(BasePage):
         assert len(icons) == count_icons, f"Expected {count_icons} elements, but found {len(icons)}"
 
     def click_first_type_of_project_icon(self):
-        first_selection_icons = self.driver.find_element(By.XPATH, self.type_of_project_icons_first)
-        first_selection_icons.click()
+        self.click_to_element(self.type_of_project_icons_first)
 
     def click_repair_section_icon(self):
-        repair_section_icons = self.driver.find_element(By.XPATH, self.repair_section)
-        repair_section_icons.click()
+        self.click_to_element(self.repair_section)
 
     def click_no_button(self):
-        no_button = self.driver.find_element(By.XPATH, self.no_button)
-        no_button.click()
+        self.click_to_element(self.no_button)
 
     def click_yes_button(self):
-        yes_button = self.driver.find_element(By.XPATH, self.yes_button)
-        yes_button.click()
+        self.click_to_element(self.yes_button)
 
     def assert_no_button_visible(self):
         no_button = self.driver.find_element(By.XPATH, self.no_button)

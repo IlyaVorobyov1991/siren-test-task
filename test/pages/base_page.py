@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import element_to_be_clickable
 from selenium.webdriver.support.ui import WebDriverWait
@@ -22,14 +24,14 @@ class BasePage:
             element_to_be_clickable(selector)
         )
 
-    def click_element(self, locator):
-        self.wait_until_is_clickable(By.XPATH, locator)
-        self.driver.click(By.XPATH, locator)
+    def click_to_element(self, locator):
+        self.wait_until_is_clickable(locator)
+        element = self.driver.find_element(By.XPATH, locator)
+        element.click()
 
     def button_next_disabled_visible(self):
         button_next_disabled = self.driver.find_element(By.XPATH, self.button_next_disabled)
         button_next_disabled.is_displayed()
 
     def button_next_click(self):
-        button_next = self.driver.find_element(By.XPATH, self.button_next)
-        button_next.click()
+        self.click_to_element(self.button_next)

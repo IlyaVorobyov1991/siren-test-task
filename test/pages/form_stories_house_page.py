@@ -16,6 +16,4 @@ class FormStoriesHousePage(BasePage):
         assert len(icons) == count_icons, f"Expected {count_icons} elements, but found {len(icons)}"
 
     def click_first_count_stories_icon(self):
-        stories_icons_first = self.driver.find_element(By.XPATH, self.stories_icons_first)
-        stories_icons_first.click()
-
+        self.click_to_element(self.stories_icons_first)

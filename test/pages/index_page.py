@@ -16,8 +16,7 @@ class IndexPage(BasePage):
         zip_code_input.send_keys(zip_code)
 
     def click_zip_code_button(self):
-        zip_code_button = self.driver.find_element(By.XPATH, self.zip_code_button)
-        zip_code_button.click()
+        self.click_to_element(self.zip_code_button)
 
     def assert_zip_caption_visible(self):
         zip_caption = self.driver.find_element(By.XPATH, self.zip_caption)

@@ -15,5 +15,4 @@ class FormKindOfSidingPage(BasePage):
         assert len(icons) == count_icons, f"Expected {count_icons} elements, but found {len(icons)}"
 
     def click_first_kind_of_siding_icon(self):
-        kind_of_siding_icons_first = self.driver.find_element(By.XPATH, self.kind_of_siding_icons_first)
-        kind_of_siding_icons_first.click()
+        self.click_to_element(self.kind_of_siding_icons_first)
